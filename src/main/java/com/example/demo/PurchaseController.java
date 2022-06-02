@@ -25,6 +25,7 @@ public class PurchaseController {
 	public String index(Model model) {
 		model.addAttribute("purchaseList", purchaseService.getPurchaseList());
 		model.addAttribute("totalPrice", purchaseService.getTotalPrice());
+		model.addAttribute("error", "");
 		return "index";
 	}
 
@@ -37,14 +38,32 @@ public class PurchaseController {
 
 	@GetMapping("/update/{id}")
 	public String updatePurchase(@PathVariable int id, Model model) {
-		model.addAttribute("purchase", purchaseService.findOne(id));
-		return "update";
+		try {
+			model.addAttribute("purchase", purchaseService.findOne(id));
+			return "update";
+
+		} catch (Exception e) {
+			model.addAttribute("purchaseList", purchaseService.getPurchaseList());
+			model.addAttribute("totalPrice", purchaseService.getTotalPrice());
+			model.addAttribute("error", "データが登録されていません");
+			return "index";
+		}
+
 	}
 
 	@GetMapping("/delete/{id}")
 	public String deletePurchase(@PathVariable int id, Model model) {
-		model.addAttribute("purchase", purchaseService.findOne(id));
-		return "delete";
+		try {
+			model.addAttribute("purchase", purchaseService.findOne(id));
+			return "delete";
+
+		} catch (Exception e) {
+			model.addAttribute("purchaseList", purchaseService.getPurchaseList());
+			model.addAttribute("totalPrice", purchaseService.getTotalPrice());
+			model.addAttribute("error", "データが登録されていません");
+			return "index";
+		}
+
 	}
 
 	@PostMapping("/new")

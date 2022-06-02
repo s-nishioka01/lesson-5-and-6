@@ -19,8 +19,8 @@ public class PurchaseService {
 		return purchaseMapper.findAll();
 	}
 
-	public Purchase findOne(int id) {
-		return purchaseMapper.findOne(id);
+	public Purchase findOne(int id) throws Exception {
+		return purchaseMapper.findOne(id).orElseThrow(() -> new Exception("データが登録されていません"));
 	}
 
 	public int getTotalPrice() {
