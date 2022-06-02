@@ -150,3 +150,8 @@
 	text-align: center;
 	margin-top: 20px;
 }
+
+.error-message{
+	color: #ff0000;
+	text-align: center;
+}
