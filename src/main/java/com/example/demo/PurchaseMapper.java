@@ -1,6 +1,7 @@
 package com.example.demo;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.apache.ibatis.annotations.Mapper;
 
@@ -9,7 +10,7 @@ public interface PurchaseMapper {
 
 	List<Purchase> findAll();
 
-	Purchase findOne(int id);
+	Optional<Purchase> findOne(int id);
 
 	int getTotalPrice();
 
