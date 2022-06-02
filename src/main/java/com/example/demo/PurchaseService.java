@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PurchaseService {
 
-	private PurchaseMapper purchaseMapper;
+	private final PurchaseMapper purchaseMapper;
 
 	@Autowired
 	public PurchaseService(PurchaseMapper purchaseMapper) {

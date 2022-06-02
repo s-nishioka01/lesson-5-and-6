@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class PurchaseController {
 
-	private PurchaseService purchaseService;
+	private final PurchaseService purchaseService;
 
 	@Autowired
 	public PurchaseController(PurchaseService purchaseService) {
