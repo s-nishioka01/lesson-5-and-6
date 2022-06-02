@@ -155,3 +155,11 @@
 	color: #ff0000;
 	text-align: center;
 }
+
+.validation-message{
+	list-style: none;
+}
+.validation-message li{
+	color: #ff0000;
+}
+

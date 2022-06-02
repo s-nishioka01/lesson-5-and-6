@@ -14,9 +14,9 @@ public interface PurchaseMapper {
 
 	int getTotalPrice();
 
-	void save(Purchase purchase);
+	void save(PurchaseForm purchaseForm);
 
-	void update(Purchase purchase);
+	void update(PurchaseForm purchaseForm);
 
 	void delete(int id);
 }
