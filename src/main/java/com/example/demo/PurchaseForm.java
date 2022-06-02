@@ -25,7 +25,6 @@ public class PurchaseForm {
 	private LocalDate purchaseDate;
 
 	public PurchaseForm(int id, String itemName, int price, LocalDate purchaseDate) {
-		super();
 		this.id = id;
 		this.itemName = itemName;
 		this.price = price;
