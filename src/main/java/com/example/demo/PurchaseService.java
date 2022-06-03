@@ -27,12 +27,12 @@ public class PurchaseService {
 		return purchaseMapper.getTotalPrice();
 	}
 
-	public void savePurchaseList(Purchase purchase) {
-		purchaseMapper.save(purchase);
+	public void savePurchaseList(PurchaseForm purchaseForm) {
+		purchaseMapper.save(purchaseForm);
 	}
 
-	public void updatePurchaseList(Purchase purchase) {
-		purchaseMapper.update(purchase);
+	public void updatePurchaseList(PurchaseForm purchaseForm) {
+		purchaseMapper.update(purchaseForm);
 	}
 
 	public void deletePurchaseList(int id) {

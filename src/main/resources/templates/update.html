@@ -9,6 +9,9 @@
 	<div class="main">
 		<div class="crud-form update-form">
 			<h2>編集フォーム</h2>
+			<ul class="validation-message" th:if="${validationError}" th:each="error: ${validationError}">
+				<li th:text="${error}"></li>
+			</ul>
 			<form method="post" th:object="${purchase}" th:action="@{/update/} + ${purchase.id}">
 				<p>日付</p>
 				<input type="date" th:field="*{purchaseDate}">
